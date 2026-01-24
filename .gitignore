@@ -21,3 +21,18 @@ gradle-app.setting
 .classpath
 
 .kotlin
+
+# eclipse project files
+.settings/
+.project
+.classpath
+.checkstyle
+bin/
+
+# IntelliJ files
+.idea/
+.kotlin
+*.iml
+*.ipr
+*.iws
+out/
