@@ -2,10 +2,12 @@ plugins {
     id("com.gradleup.shadow")
 }
 
-tasks.shadowJar {
-    archiveClassifier.set("") // Use empty string instead of null.
-    isEnableRelocation = true
-    relocationPrefix = "${project.group}.shadow"
+tasks.named("shadowJar") {
+    setProperty("archiveClassifier", "")
+    setProperty("enableRelocation", true)
+    setProperty("relocationPrefix", "${project.group}.shadow")
 }
 
-tasks.build { dependsOn(tasks.shadowJar) }
+tasks.named("build") {
+    dependsOn("shadowJar")
+}
